@@ -4,7 +4,7 @@ import com.oldratlee.io.core.Input;
 import com.oldratlee.io.core.Output;
 import com.oldratlee.io.core.Receiver;
 import com.oldratlee.io.core.Sender;
-import com.oldratlee.io.core.filter.Filters;
+import com.oldratlee.io.core.filter.Transforms;
 import com.oldratlee.io.core.filter.Function;
 import com.oldratlee.io.utils.Outputs;
 
@@ -76,7 +76,7 @@ public class Demo_PeopleToFileTransport {
         File destination = new File("out.tmp");
         PeopleInput input = new PeopleInput(people);
         Output<String, IOException> output = Outputs.text(destination);
-        input.transferTo(Filters.filter(function, output));
+        input.transferTo(Transforms.map(function, output));
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import com.oldratlee.io.core.Input;
 import com.oldratlee.io.core.Output;
-import com.oldratlee.io.core.filter.Filters;
+import com.oldratlee.io.core.filter.Transforms;
 import com.oldratlee.io.core.filter.Function;
 import com.oldratlee.io.utils.Inputs;
 import com.oldratlee.io.utils.Outputs;
@@ -31,7 +31,7 @@ public class Demo_Intercept_CountLine {
             }
         };
         
-        input.transferTo(Filters.filter(function, output));
+        input.transferTo(Transforms.map(function, output));
         
         System.out.println("Counter: " + count.get());
     }

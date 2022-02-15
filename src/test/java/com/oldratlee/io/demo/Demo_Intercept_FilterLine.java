@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import com.oldratlee.io.core.Input;
 import com.oldratlee.io.core.Output;
-import com.oldratlee.io.core.filter.Filters;
+import com.oldratlee.io.core.filter.Transforms;
 import com.oldratlee.io.core.filter.Specification;
 import com.oldratlee.io.utils.Inputs;
 import com.oldratlee.io.utils.Outputs;
@@ -29,6 +29,6 @@ public class Demo_Intercept_FilterLine {
             }
         };
 
-        input.transferTo(Filters.filter(specification, output));
+        input.transferTo(Transforms.filter(specification, output));
     }
 }
